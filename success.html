@@ -17,17 +17,16 @@
             color: #333;
             background-color: #f5f7fa;
             padding: 20px;
-            min-height: 100vh;
             display: flex;
+            min-height: 100vh;
             align-items: center;
             justify-content: center;
         }
         
-        .container {
+        .success-container {
             max-width: 600px;
-            margin: 0 auto;
             background: white;
-            padding: 40px;
+            padding: 60px 40px;
             border-radius: 12px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             text-align: center;
@@ -36,17 +35,19 @@
         .success-icon {
             width: 80px;
             height: 80px;
-            background-color: #27ae60;
+            margin: 0 auto 30px;
+            background-color: #2ecc71;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 30px;
         }
         
-        .checkmark {
+        .success-icon::before {
+            content: "✓";
             color: white;
-            font-size: 40px;
+            font-size: 48px;
+            font-weight: bold;
         }
         
         h1 {
@@ -57,89 +58,114 @@
         
         p {
             color: #7f8c8d;
-            font-size: 1.2em;
-            margin-bottom: 30px;
+            font-size: 1.1em;
+            margin-bottom: 15px;
         }
         
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: background-color 0.3s;
-            margin: 0 10px;
-        }
-        
-        .btn:hover {
-            background-color: #2980b9;
-        }
-        
-        .btn-secondary {
-            background-color: #95a5a6;
-        }
-        
-        .btn-secondary:hover {
-            background-color: #7f8c8d;
-        }
-        
-        .info-box {
-            background-color: #e8f4f8;
-            border-left: 4px solid #3498db;
+        .processing-info {
+            background: #e8f4f8;
             padding: 20px;
+            border-radius: 8px;
             margin: 30px 0;
-            text-align: left;
-            border-radius: 6px;
+            border-left: 4px solid #3498db;
         }
         
-        .info-box h3 {
-            color: #2c3e50;
+        .processing-info h2 {
+            color: #2980b9;
+            font-size: 1.3em;
             margin-bottom: 10px;
         }
         
-        .info-box ul {
-            list-style: none;
+        .processing-info p {
+            color: #34495e;
+            font-size: 1em;
+            margin-bottom: 8px;
+        }
+        
+        .next-steps {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .next-steps h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .next-steps ul {
+            list-style-type: none;
             padding: 0;
         }
         
-        .info-box li {
-            padding: 5px 0;
-            color: #555;
+        .next-steps li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
         }
         
-        .info-box li:before {
-            content: "✓ ";
-            color: #27ae60;
+        .next-steps li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #3498db;
             font-weight: bold;
-            margin-right: 10px;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+        
+        @media (max-width: 768px) {
+            .success-container {
+                padding: 40px 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="success-icon">
-            <div class="checkmark">✓</div>
-        </div>
+    <div class="success-container">
+        <div class="success-icon"></div>
         
         <h1>Thank You!</h1>
         <p>Your SEO content request has been successfully submitted.</p>
         
-        <div class="info-box">
-            <h3>What happens next?</h3>
+        <div class="processing-info">
+            <h2>What Happens Next?</h2>
+            <p><strong>Processing Time:</strong> Within 60 minutes</p>
+            <p>Our AI-powered system is now generating your pharmaceutical SEO strategy.</p>
+        </div>
+        
+        <div class="next-steps">
+            <h3>You Will Receive:</h3>
             <ul>
-                <li>Your request has been received and logged</li>
-                <li>Our SEO team will review your submission</li>
-                <li>Content creation will begin based on your requirements</li>
-                <li>You'll receive updates at the email address provided</li>
+                <li>10 Primary SEO Keywords</li>
+                <li>10 Long-tail Keyword Phrases</li>
+                <li>10 Patient/HCP Questions</li>
+                <li>Optimized H1 and H2 Tags</li>
+                <li>Meta Description (150-155 characters)</li>
+                <li>SEO-Optimized Title (55-60 characters)</li>
+                <li>Executive Summary (200 words)</li>
             </ul>
         </div>
         
-        <div>
-            <a href="/" class="btn">Submit Another Request</a>
-            <a href="https://3cubedai.com" class="btn btn-secondary">Visit 3CubedAI</a>
-        </div>
+        <p>An email confirmation has been sent to the address provided.</p>
+        
+        <a href="/" class="btn-primary">Submit Another Request</a>
     </div>
 </body>
 </html>

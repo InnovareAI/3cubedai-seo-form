@@ -1,111 +1,101 @@
 # 3CubedAI SEO Content Request Form
 
-<!-- Last Deployment: July 18, 2025, 3:45 PM -->
+<!-- Last Deployment: July 18, 2025, 4:00 PM -->
 
-A comprehensive SEO content request form designed for pharmaceutical products, built for Netlify Forms integration.
+A comprehensive pharmaceutical SEO content request form designed for Netlify Forms integration with Supabase backend.
 
 ## 📋 Features
 
-### Mandatory Fields (15)
-- Product Name & Identifier
-- Therapeutic Area & Medical Indication
-- Development Stage
-- Target Audience (multi-select)
-- Geography (multi-select)
-- Key Differentiators
-- Competitor Products (with URLs)
-- Unmet Medical Need
-- Treatment Settings (multi-select)
-- Competitive Positioning
-- Brand Name Status
-- Expected Launch Date
-- Priority Markets (dynamic ranking)
+### Mandatory Fields
+1. **Product Information**
+   - Stage (Pre-Clinical to Post-Market)
+   - Product/Project Name
+   - Product Code/Generic Name
+   - Condition Treated
+   - Therapeutic Area
 
-### Optional Fields (15)
+2. **Target Audience & Markets**
+   - Target Audience (multi-select)
+   - Geography (select up to 3 markets)
+
+3. **Competitive Landscape**
+   - Key Product Advantages
+   - Competitor Products (dynamic list)
+   - Problem Solved
+   - Treatment Setting (multi-select)
+   - Market Position
+
+4. **Launch Status & Timing**
+   - Brand Name Status
+   - Expected Launch Date
+
+5. **Reviewer Information**
+   - SEO Reviewer Name & Email
+   - Client Information
+   - MLR Reviewer Information
+
+### Optional Fields (15+)
 - Mechanism of Action
-- Clinical Trial Details
-- Primary Endpoints
-- Safety Profile
+- Clinical Trial Information
+- Key Study Results
+- Safety Information
 - Dosing Information
 - Patient Population
-- Regulatory Status
-- Market Size
-- Additional Keywords
-- Special Considerations
-- Content Restrictions
-- Existing Digital Assets
-- Primary Advantage Type
-- Conference Presence
-- Key Opinion Leaders
-
-### Dynamic Features
-- Stage-based product name prefixing
-- Conditional fields (Other therapeutic area, Brand name)
-- Dynamic lists for competitors, conferences, and KOLs
-- Priority market ranking when multiple geographies selected
-- Form validation for required multi-selects
+- Special FDA/EMA Status
+- Patient Numbers
+- Industry Keywords
+- Legal/Regulatory Limitations
+- Current Websites
+- Main Selling Point
+- Medical Conferences
+- Associated Medical Experts
 
 ## 🚀 Deployment
 
-### 1. Deploy to Netlify
-- Fork or clone this repository
-- Connect to Netlify
-- Deploy site
+This form is configured for Netlify Forms with `data-netlify="true"` attribute.
 
-### 2. Form Configuration
-The form is pre-configured with:
-```html
-<form name="seo-content-request" method="POST" data-netlify="true" action="/success">
-```
+### Setup Instructions:
+1. Deploy to Netlify
+2. Forms are automatically detected
+3. Configure webhook notifications in Netlify dashboard
+4. Connect to n8n workflow for processing
 
-### 3. Success Page
-Make sure to deploy the included `success.html` page for form submission confirmation.
+## 📝 Form Features
 
-## 📊 Integration
+- **Dynamic Fields**: Brand name appears when status is "Finalized"
+- **Smart Validation**: Multi-select fields require at least one selection
+- **Geography Limit**: Maximum 3 target markets can be selected
+- **Dynamic Lists**: Add multiple competitors, conferences, and experts
+- **Mobile Responsive**: Optimized for all devices
+- **Processing Time**: 60 minutes turnaround
 
-### Netlify Forms
-- Forms are automatically detected on deploy
-- Submissions stored in Netlify dashboard
-- Webhook notifications available
+## 🔗 Integration
 
-### n8n Workflow
-Configure n8n to:
-1. Receive Netlify webhook
-2. Process form fields
-3. Insert into Supabase
+The form integrates with:
+- Netlify Forms for submission handling
+- n8n workflow for processing
+- Supabase for data storage
+- AI content generation system
 
-### Supabase Schema
-Matches the comprehensive schema with:
-- `seo_requests` table (main fields)
-- `seo_request_approvals` table
-- All 30+ fields properly typed
+## 📊 Output
 
-## 📱 Features
+Each submission generates:
+- 10 Primary SEO Keywords
+- 10 Long-tail Keyword Phrases
+- 10 Patient/HCP Questions
+- Optimized H1 and H2 Tags
+- Meta Description (150-155 characters)
+- SEO Title (55-60 characters)
+- Executive Summary (200 words)
 
-- **Mobile Responsive**: Adapts to all screen sizes
-- **Professional Design**: Clean, modern UI
-- **Validation**: Client-side validation for required fields
-- **User-Friendly**: Clear sections, help text, and examples
+## 🛠️ Technical Details
 
-## 🔧 Customization
+- Pure HTML/CSS/JavaScript (no dependencies)
+- Netlify Forms integration
+- Client-side validation
+- Responsive design
+- Accessible markup
 
-### Styling
-Modify the embedded CSS in the `<style>` section to match your brand.
+## 📧 Support
 
-### Fields
-Add or remove fields by editing the form sections. Remember to update:
-- HTML form fields
-- JavaScript validation
-- Supabase schema
-- n8n workflow mapping
-
-## 📞 Support
-
-For questions or issues:
-- Check Netlify Forms documentation
-- Review n8n webhook setup
-- Verify Supabase schema matches
-
----
-
-Built for 3CubedAI by InnovareAI
+For questions or issues, contact the 3CubedAI team.
