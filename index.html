@@ -121,13 +121,10 @@
             font-style: italic;
         }
         
-        .example-text {
-            font-size: 0.85em;
-            color: #666;
-            margin-top: 5px;
-            padding: 10px;
-            background: #e8f4f8;
-            border-radius: 4px;
+        textarea::placeholder,
+        input::placeholder {
+            color: #999;
+            opacity: 1;
         }
         
         .button-group {
@@ -430,15 +427,12 @@
                 
                 <div class="form-group">
                     <label for="key_advantages" class="required">Key Product Advantages</label>
-                    <textarea id="key_advantages" name="key_advantages" required rows="6"></textarea>
-                    <div class="example-text">
-                        Example advantages:<br>
-                        • Once daily dosing (vs. multiple daily doses)<br>
-                        • Faster onset of action (days vs. weeks)<br>
-                        • Better safety profile (fewer side effects)<br>
-                        • Oral medication (vs. injections)<br>
-                        • Lower cost than alternatives
-                    </div>
+                    <textarea id="key_advantages" name="key_advantages" required rows="6" placeholder="Example advantages:
+• Once daily dosing (vs. multiple daily doses)
+• Faster onset of action (days vs. weeks)
+• Better safety profile (fewer side effects)
+• Oral medication (vs. injections)
+• Lower cost than alternatives"></textarea>
                     <p class="help-text">List 3-5 advantages in simple, clear language. Focus on what matters to patients and doctors.</p>
                 </div>
                 
@@ -595,37 +589,47 @@
             <div class="form-section optional-section">
                 <div class="form-group">
                     <label for="mechanism_of_action">How Your Product Works (Optional)</label>
-                    <textarea id="mechanism_of_action" name="mechanism_of_action" placeholder="e.g., Selective JAK1/JAK3 inhibitor"></textarea>
+                    <textarea id="mechanism_of_action" name="mechanism_of_action" placeholder="e.g., Selective JAK1/JAK3 inhibitor that blocks inflammatory pathways by targeting specific kinase enzymes"></textarea>
                     <p class="help-text">Technical description helps capture HCP searches for specific mechanisms</p>
                 </div>
                 
                 <div class="form-group">
                     <label for="clinical_trials">Clinical Trial Information (Optional)</label>
-                    <textarea id="clinical_trials" name="clinical_trials" placeholder="e.g., Phase 3 STELLAR trial, 1,200 patients, 52 weeks"></textarea>
+                    <textarea id="clinical_trials" name="clinical_trials" placeholder="e.g., Phase 3 STELLAR trial, 1,200 patients, 52 weeks
+Phase 2 NOVA study, 450 patients, dose-ranging
+Long-term extension study, 800 patients, 2 years"></textarea>
                     <p class="help-text">Trial names and details that HCPs might search for</p>
                 </div>
                 
                 <div class="form-group">
                     <label for="key_results">Key Study Results (Optional)</label>
-                    <textarea id="key_results" name="key_results" placeholder="e.g., 75% reduction in disease activity score"></textarea>
+                    <textarea id="key_results" name="key_results" placeholder="e.g., 75% reduction in disease activity score
+45% achieved complete remission at Week 16
+Significant improvement in quality of life scores"></textarea>
                     <p class="help-text">Specific outcomes that differentiate your product</p>
                 </div>
                 
                 <div class="form-group">
                     <label for="safety_info">Safety Information (Optional)</label>
-                    <textarea id="safety_info" name="safety_info" placeholder="e.g., No black box warnings, well-tolerated"></textarea>
+                    <textarea id="safety_info" name="safety_info" placeholder="e.g., No black box warnings, well-tolerated
+Most common side effects: headache (8%), nausea (5%)
+No dose adjustment needed for elderly patients"></textarea>
                     <p class="help-text">Key safety data that influences prescribing decisions</p>
                 </div>
                 
                 <div class="form-group">
                     <label for="dosing_info">How Is It Taken? (Optional)</label>
-                    <textarea id="dosing_info" name="dosing_info" placeholder="e.g., Once daily oral tablet"></textarea>
+                    <textarea id="dosing_info" name="dosing_info" placeholder="e.g., Once daily oral tablet, can be taken with or without food
+Starting dose: 5mg daily for 2 weeks, then 10mg daily
+No dose adjustment for mild renal impairment"></textarea>
                     <p class="help-text">Dosing convenience is a major search factor</p>
                 </div>
                 
                 <div class="form-group">
                     <label for="patient_population">Who Is This For? (Optional)</label>
-                    <textarea id="patient_population" name="patient_population" placeholder="e.g., Adults 18-65 with inadequate response to methotrexate"></textarea>
+                    <textarea id="patient_population" name="patient_population" placeholder="e.g., Adults 18-65 with inadequate response to methotrexate
+Moderate to severe disease despite conventional therapy
+Biologic-naive patients or those who failed anti-TNF therapy"></textarea>
                     <p class="help-text">Specific patient groups who benefit most</p>
                 </div>
                 
@@ -662,19 +666,22 @@
                 
                 <div class="form-group">
                     <label for="patient_numbers">Patient Numbers (Optional)</label>
-                    <input type="text" id="patient_numbers" name="patient_numbers" placeholder="e.g., 2.3 million patients in US">
+                    <input type="text" id="patient_numbers" name="patient_numbers" placeholder="e.g., 2.3 million patients in US, 15 million globally, growing 5% annually">
                     <p class="help-text">Helps prioritize SEO investment based on market opportunity</p>
                 </div>
                 
                 <div class="form-group">
                     <label for="industry_keywords">Industry Keywords You Want Included (Optional)</label>
-                    <textarea id="industry_keywords" name="industry_keywords" placeholder="e.g., JAKi, tsDMARD, targeted synthetic DMARD"></textarea>
+                    <textarea id="industry_keywords" name="industry_keywords" placeholder="e.g., JAKi, tsDMARD, targeted synthetic DMARD, kinase inhibitor, small molecule, oral DMARD, JAK/STAT pathway"></textarea>
                     <p class="help-text">Technical terms, acronyms, or specific phrases important to your product</p>
                 </div>
                 
                 <div class="form-group">
                     <label for="special_considerations">Anything Else We Should Know? (Optional)</label>
-                    <textarea id="special_considerations" name="special_considerations" placeholder="Special circumstances that might affect SEO approach"></textarea>
+                    <textarea id="special_considerations" name="special_considerations" placeholder="e.g., Competing with biosimilar launching next year
+Positioned for community practice vs. academic centers
+Key data presentation at ASH conference in December
+Partnership with patient advocacy group announced"></textarea>
                 </div>
                 
                 <div class="form-group">
