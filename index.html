@@ -257,6 +257,46 @@
             <!-- Netlify Forms hidden field -->
             <input type="hidden" name="form-name" value="seo-content-request">
             
+            <!-- Reviewer Information Section (Moved to Top) -->
+            <div class="form-section">
+                <h2>Reviewer Information</h2>
+                
+                <div class="form-group">
+                    <label for="seo_reviewer_name" class="required">SEO Reviewer Name</label>
+                    <input type="text" id="seo_reviewer_name" name="seo_reviewer_name" required placeholder="Your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="seo_reviewer_email" class="required">SEO Reviewer Email</label>
+                    <input type="email" id="seo_reviewer_email" name="seo_reviewer_email" required placeholder="your.email@company.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="client_name">Client Name</label>
+                    <input type="text" id="client_name" name="client_name" placeholder="Company or client name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="client_reviewer_name">Client Reviewer Name</label>
+                    <input type="text" id="client_reviewer_name" name="client_reviewer_name" placeholder="Client contact name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="client_reviewer_email">Client Reviewer Email</label>
+                    <input type="email" id="client_reviewer_email" name="client_reviewer_email" placeholder="client@company.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mlr_reviewer_name">MLR Reviewer Name</label>
+                    <input type="text" id="mlr_reviewer_name" name="mlr_reviewer_name" placeholder="Medical/Legal/Regulatory reviewer">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mlr_reviewer_email">MLR Reviewer Email</label>
+                    <input type="email" id="mlr_reviewer_email" name="mlr_reviewer_email" placeholder="mlr@company.com">
+                </div>
+            </div>
+            
             <!-- Product Information Section -->
             <div class="form-section">
                 <h2>Product Information</h2>
@@ -265,13 +305,9 @@
                     <label for="stage" class="required">Stage</label>
                     <select id="stage" name="stage" required>
                         <option value="">Select Stage</option>
-                        <option value="Pre-Clinical">Pre-Clinical</option>
-                        <option value="Phase I">Phase I</option>
-                        <option value="Phase II">Phase II</option>
                         <option value="Phase III">Phase III</option>
-                        <option value="Regulatory Review">Regulatory Review</option>
+                        <option value="Market Shaping">Market Shaping</option>
                         <option value="Market Launch">Market Launch</option>
-                        <option value="Post-Market">Post-Market</option>
                     </select>
                 </div>
                 
@@ -314,9 +350,9 @@
                 </div>
             </div>
             
-            <!-- Target Audience & Markets Section -->
+            <!-- Target Audience Section -->
             <div class="form-section">
-                <h2>Target Audience & Markets</h2>
+                <h2>Target Audience</h2>
                 
                 <div class="form-group">
                     <label class="required">Target Audience (Select all that apply)</label>
@@ -356,6 +392,11 @@
                     </div>
                     <p class="error-message" id="target_audience_error">Please select at least one target audience</p>
                 </div>
+            </div>
+            
+            <!-- Target Markets Section -->
+            <div class="form-section">
+                <h2>Target Markets</h2>
                 
                 <div class="form-group">
                     <label class="required">Geography (Select up to 3 target markets)</label>
@@ -393,20 +434,8 @@
                             <label for="geo_brazil">Brazil</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" id="geo_mexico" name="geography" value="Mexico">
-                            <label for="geo_mexico">Mexico</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="geo_me" name="geography" value="Saudi Arabia / Middle East">
-                            <label for="geo_me">Saudi Arabia / Middle East</label>
-                        </div>
-                        <div class="checkbox-item">
                             <input type="checkbox" id="geo_anz" name="geography" value="Australia / New Zealand">
                             <label for="geo_anz">Australia / New Zealand</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="geo_asean" name="geography" value="ASEAN">
-                            <label for="geo_asean">ASEAN (Southeast Asia)</label>
                         </div>
                         <div class="checkbox-item">
                             <input type="checkbox" id="geo_global" name="geography" value="Global">
@@ -537,46 +566,6 @@
                 <div class="form-group" id="launch_date_group" style="display: none;">
                     <label for="launch_date">Launch Date</label>
                     <input type="date" id="launch_date" name="launch_date">
-                </div>
-            </div>
-            
-            <!-- Reviewer Information Section -->
-            <div class="form-section">
-                <h2>Reviewer Information</h2>
-                
-                <div class="form-group">
-                    <label for="seo_reviewer_name" class="required">SEO Reviewer Name</label>
-                    <input type="text" id="seo_reviewer_name" name="seo_reviewer_name" required placeholder="Your full name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="seo_reviewer_email" class="required">SEO Reviewer Email</label>
-                    <input type="email" id="seo_reviewer_email" name="seo_reviewer_email" required placeholder="your.email@company.com">
-                </div>
-                
-                <div class="form-group">
-                    <label for="client_name">Client Name</label>
-                    <input type="text" id="client_name" name="client_name" placeholder="Company or client name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="client_reviewer_name">Client Reviewer Name</label>
-                    <input type="text" id="client_reviewer_name" name="client_reviewer_name" placeholder="Client contact name">
-                </div>
-                
-                <div class="form-group">
-                    <label for="client_reviewer_email">Client Reviewer Email</label>
-                    <input type="email" id="client_reviewer_email" name="client_reviewer_email" placeholder="client@company.com">
-                </div>
-                
-                <div class="form-group">
-                    <label for="mlr_reviewer_name">MLR Reviewer Name</label>
-                    <input type="text" id="mlr_reviewer_name" name="mlr_reviewer_name" placeholder="Medical/Legal/Regulatory reviewer">
-                </div>
-                
-                <div class="form-group">
-                    <label for="mlr_reviewer_email">MLR Reviewer Email</label>
-                    <input type="email" id="mlr_reviewer_email" name="mlr_reviewer_email" placeholder="mlr@company.com">
                 </div>
             </div>
             
