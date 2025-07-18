@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Content Request Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .form-section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .form-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        .required::after {
+            content: " *";
+            color: #e74c3c;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        
+        .help-text {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        
+        .button-group {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn-secondary {
+            background-color: #95a5a6;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #7f8c8d;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+        
+        .dynamic-list {
+            margin-top: 10px;
+        }
+        
+        .dynamic-list-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        
+        .dynamic-list-item input {
+            flex: 1;
+        }
+        
+        .remove-btn {
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+        
+        .remove-btn:hover {
+            background-color: #c0392b;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .priority-ranking {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f4f8;
+            border-radius: 6px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SEO Content Request Form</h1>
+        <p class="subtitle">Submit your pharmaceutical product information for SEO content creation</p>
+        
+        <form name="seo-content-request" method="POST" data-netlify="true" action="/success">
+            <!-- Netlify Forms hidden field -->
+            <input type="hidden" name="form-name" value="seo-content-request">
+            
+            <!-- Basic Information Section -->
+            <div class="form-section">
+                <h2>Basic Information</h2>
+                
+                <div class="form-group">
+                    <label for="submitter_name" class="required">Your Name (SEO Reviewer)</label>
+                    <input type="text" id="submitter_name" name="submitter_name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="submitter_email" class="required">Your Email</label>
+                    <input type="email" id="submitter_email" name="submitter_email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="client_name" class="required">Client/Company Name</label>
+                    <input type="text" id="client_name" name="client_name" required>
+                </div>
+            </div>
+            
+            <!-- Product Information Section -->
+            <div class="form-section">
+                <h2>Product Information</h2>
+                
+                <div class="form-group">
+                    <label for="product_name" class="required">Product Name</label>
+                    <input type="text" id="product_name" name="product_name" required>
+                    <p class="help-text">Will be prefixed based on stage selection</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="product_identifier" class="required">Product Identifier/Code</label>
+                    <input type="text" id="product_identifier" name="product_identifier" required 
+                           placeholder="e.g., ABC-123, RX-2024">
+                </div>
+                
+                <div class="form-group">
+                    <label for="therapeutic_area" class="required">Therapeutic Area</label>
+                    <select id="therapeutic_area" name="therapeutic_area" required>
+                        <option value="">Select a therapeutic area</option>
+                        <option value="Oncology">Oncology</option>
+                        <option value="Cardiology">Cardiology</option>
+                        <option value="Neurology">Neurology</option>
+                        <option value="Immunology">Immunology</option>
+                        <option value="Endocrinology">Endocrinology</option>
+                        <option value="Respiratory">Respiratory</option>
+                        <option value="Gastroenterology">Gastroenterology</option>
+                        <option value="Infectious Disease">Infectious Disease</option>
+                        <option value="Rheumatology">Rheumatology</option>
+                        <option value="Dermatology">Dermatology</option>
+                        <option value="Ophthalmology">Ophthalmology</option>
+                        <option value="Rare Disease">Rare Disease</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" id="therapeutic_area_other_group" style="display: none;">
+                    <label for="therapeutic_area_other">Specify Other Therapeutic Area</label>
+                    <input type="text" id="therapeutic_area_other" name="therapeutic_area_other">
+                </div>
+                
+                <div class="form-group">
+                    <label for="stage" class="required">Development Stage</label>
+                    <select id="stage" name="stage" required>
+                        <option value="">Select development stage</option>
+                        <option value="Pre-Clinical">Pre-Clinical</option>
+                        <option value="Phase I">Phase I</option>
+                        <option value="Phase II">Phase II</option>
+                        <option value="Phase III">Phase III</option>
+                        <option value="Regulatory Review">Regulatory Review</option>
+                        <option value="Market Launch">Market Launch</option>
+                        <option value="Post-Market">Post-Market</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="medical_indication" class="required">Medical Indication/Condition</label>
+                    <textarea id="medical_indication" name="medical_indication" required 
+                              placeholder="Describe the specific condition or disease this product treats"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="brand_name_status" class="required">Brand Name Status</label>
+                    <select id="brand_name_status" name="brand_name_status" required>
+                        <option value="">Select status</option>
+                        <option value="Not yet determined">Not yet determined</option>
+                        <option value="Under development">Under development</option>
+                        <option value="Finalized">Finalized</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" id="brand_name_group" style="display: none;">
+                    <label for="brand_name">Brand Name (if finalized)</label>
+                    <input type="text" id="brand_name" name="brand_name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="expected_launch_date" class="required">Expected Launch Date</label>
+                    <input type="date" id="expected_launch_date" name="expected_launch_date" required>
+                </div>
+            </div>
+            
+            <!-- Target Audience Section -->
+            <div class="form-section">
+                <h2>Target Audience & Geography</h2>
+                
+                <div class="form-group">
+                    <label class="required">Target Audience (Select all that apply)</label>
+                    <div class="checkbox-group" id="target_audience_group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ta_hcp" name="target_audience" value="Healthcare Professionals">
+                            <label for="ta_hcp">Healthcare Professionals</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ta_patients" name="target_audience" value="Patients">
+                            <label for="ta_patients">Patients</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ta_caregivers" name="target_audience" value="Caregivers">
+                            <label for="ta_caregivers">Caregivers</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ta_payers" name="target_audience" value="Payers/Insurers">
+                            <label for="ta_payers">Payers/Insurers</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ta_researchers" name="target_audience" value="Researchers">
+                            <label for="ta_researchers">Researchers</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ta_media" name="target_audience" value="Media/Press">
+                            <label for="ta_media">Media/Press</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ta_investors" name="target_audience" value="Investors">
+                            <label for="ta_investors">Investors</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ta_policy" name="target_audience" value="Policy Makers">
+                            <label for="ta_policy">Policy Makers</label>
+                        </div>
+                    </div>
+                    <p class="error-message" id="target_audience_error">Please select at least one target audience</p>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required">Target Geography (Select all that apply)</label>
+                    <div class="checkbox-group" id="geography_group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="geo_usa" name="geography" value="USA">
+                            <label for="geo_usa">USA</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="geo_canada" name="geography" value="Canada">
+                            <label for="geo_canada">Canada</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="geo_uk" name="geography" value="UK">
+                            <label for="geo_uk">UK</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="geo_eu" name="geography" value="EU">
+                            <label for="geo_eu">EU</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="geo_australia" name="geography" value="Australia">
+                            <label for="geo_australia">Australia</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="geo_japan" name="geography" value="Japan">
+                            <label for="geo_japan">Japan</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="geo_latam" name="geography" value="Latin America">
+                            <label for="geo_latam">Latin America</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="geo_asia" name="geography" value="Asia Pacific">
+                            <label for="geo_asia">Asia Pacific</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="geo_global" name="geography" value="Global">
+                            <label for="geo_global">Global</label>
+                        </div>
+                    </div>
+                    <p class="error-message" id="geography_error">Please select at least one geography</p>
+                </div>
+                
+                <!-- Priority Markets Ranking (shown when 2+ geographies selected) -->
+                <div class="form-group" id="priority_markets_group" style="display: none;">
+                    <label for="priority_markets">Priority Markets Ranking</label>
+                    <div class="priority-ranking">
+                        <p class="help-text">Please rank the selected markets in order of priority (1 = highest priority)</p>
+                        <div id="priority_markets_list"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Treatment Setting Section -->
+            <div class="form-section">
+                <h2>Treatment Setting & Competitive Landscape</h2>
+                
+                <div class="form-group">
+                    <label class="required">Treatment Setting (Select all that apply)</label>
+                    <div class="checkbox-group" id="treatment_setting_group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ts_hospital" name="treatment_setting" value="Hospital">
+                            <label for="ts_hospital">Hospital</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ts_outpatient" name="treatment_setting" value="Outpatient Clinic">
+                            <label for="ts_outpatient">Outpatient Clinic</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ts_specialty" name="treatment_setting" value="Specialty Center">
+                            <label for="ts_specialty">Specialty Center</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ts_home" name="treatment_setting" value="Home/Self-administered">
+                            <label for="ts_home">Home/Self-administered</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ts_infusion" name="treatment_setting" value="Infusion Center">
+                            <label for="ts_infusion">Infusion Center</label>
+                        </div>
+                    </div>
+                    <p class="error-message" id="treatment_setting_error">Please select at least one treatment setting</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="unmet_medical_need" class="required">Unmet Medical Need</label>
+                    <textarea id="unmet_medical_need" name="unmet_medical_need" required 
+                              placeholder="Describe the gap in current treatment options this product addresses"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="key_differentiators" class="required">Key Differentiators</label>
+                    <textarea id="key_differentiators" name="key_differentiators" required 
+                              placeholder="What makes this product unique compared to existing treatments?"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="required">Competitor Products</label>
+                    <p class="help-text">List main competing products with their websites</p>
+                    <div id="competitors_list" class="dynamic-list">
+                        <div class="dynamic-list-item">
+                            <input type="text" name="competitor_name[]" placeholder="Competitor product name" required>
+                            <input type="url" name="competitor_url[]" placeholder="https://competitor-website.com" required>
+                        </div>
+                    </div>
+                    <button type="button" onclick="addCompetitor()" class="btn-secondary">Add Another Competitor</button>
+                </div>
+                
+                <div class="form-group">
+                    <label for="competitive_positioning" class="required">Competitive Positioning</label>
+                    <textarea id="competitive_positioning" name="competitive_positioning" required 
+                              placeholder="How should this product be positioned against competitors?"></textarea>
+                </div>
+            </div>
+            
+            <!-- Clinical Information Section (Optional) -->
+            <div class="form-section">
+                <h2>Clinical Information (Optional)</h2>
+                
+                <div class="form-group">
+                    <label for="mechanism_of_action">Mechanism of Action</label>
+                    <textarea id="mechanism_of_action" name="mechanism_of_action" 
+                              placeholder="How does the drug work at a molecular level?"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="clinical_trial_details">Clinical Trial Details</label>
+                    <textarea id="clinical_trial_details" name="clinical_trial_details" 
+                              placeholder="Key trial names, phases, patient numbers"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="primary_endpoints">Primary Endpoints</label>
+                    <textarea id="primary_endpoints" name="primary_endpoints" 
+                              placeholder="Main efficacy measures in clinical trials"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="safety_profile">Safety Profile</label>
+                    <textarea id="safety_profile" name="safety_profile" 
+                              placeholder="Key safety data, adverse events, warnings"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dosing_information">Dosing Information</label>
+                    <textarea id="dosing_information" name="dosing_information" 
+                              placeholder="Administration route, frequency, dosage"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="patient_population">Patient Population</label>
+                    <textarea id="patient_population" name="patient_population" 
+                              placeholder="Specific patient demographics or characteristics"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="regulatory_status">Regulatory Status</label>
+                    <textarea id="regulatory_status" name="regulatory_status" 
+                              placeholder="FDA status, EMA status, other approvals"></textarea>
+                </div>
+            </div>
+            
+            <!-- Market Information Section (Optional) -->
+            <div class="form-section">
+                <h2>Market Information (Optional)</h2>
+                
+                <div class="form-group">
+                    <label for="market_size">Market Size/Opportunity</label>
+                    <textarea id="market_size" name="market_size" 
+                              placeholder="Patient numbers, market value, growth projections"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="primary_advantage_type">Primary Competitive Advantage</label>
+                    <select id="primary_advantage_type" name="primary_advantage_type">
+                        <option value="">Select primary advantage</option>
+                        <option value="Superior efficacy">Superior efficacy</option>
+                        <option value="Better safety/tolerability">Better safety/tolerability</option>
+                        <option value="More convenient dosing">More convenient dosing</option>
+                        <option value="Novel mechanism">Novel mechanism</option>
+                        <option value="First-in-class">First-in-class</option>
+                        <option value="Cost-effectiveness">Cost-effectiveness</option>
+                        <option value="Broader patient population">Broader patient population</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Conference Presence</label>
+                    <p class="help-text">Recent or upcoming conference presentations</p>
+                    <div id="conferences_list" class="dynamic-list">
+                        <div class="dynamic-list-item">
+                            <input type="text" name="conference_name[]" placeholder="Conference name">
+                            <input type="date" name="conference_date[]">
+                            <input type="text" name="conference_topic[]" placeholder="Presentation topic">
+                        </div>
+                    </div>
+                    <button type="button" onclick="addConference()" class="btn-secondary">Add Conference</button>
+                </div>
+                
+                <div class="form-group">
+                    <label>Key Opinion Leaders</label>
+                    <p class="help-text">Physicians or researchers associated with the product</p>
+                    <div id="kols_list" class="dynamic-list">
+                        <div class="dynamic-list-item">
+                            <input type="text" name="kol_name[]" placeholder="Name, Title">
+                            <input type="text" name="kol_institution[]" placeholder="Institution">
+                        </div>
+                    </div>
+                    <button type="button" onclick="addKOL()" class="btn-secondary">Add KOL</button>
+                </div>
+            </div>
+            
+            <!-- SEO & Content Strategy Section (Optional) -->
+            <div class="form-section">
+                <h2>SEO & Content Strategy (Optional)</h2>
+                
+                <div class="form-group">
+                    <label for="additional_keywords">Additional Keywords</label>
+                    <textarea id="additional_keywords" name="additional_keywords" 
+                              placeholder="Specific terms you want to rank for"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="content_restrictions">Content Restrictions</label>
+                    <textarea id="content_restrictions" name="content_restrictions" 
+                              placeholder="Any regulatory or legal limitations on content"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="existing_digital_assets">Existing Digital Assets</label>
+                    <textarea id="existing_digital_assets" name="existing_digital_assets" 
+                              placeholder="Current website, content, or campaigns"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="special_considerations">Special Considerations</label>
+                    <textarea id="special_considerations" name="special_considerations" 
+                              placeholder="Any other important information for content creation"></textarea>
+                </div>
+            </div>
+            
+            <!-- Reviewer Information Section -->
+            <div class="form-section">
+                <h2>Reviewer Information</h2>
+                
+                <div class="form-group">
+                    <label for="client_reviewer_name">Client Reviewer Name</label>
+                    <input type="text" id="client_reviewer_name" name="client_reviewer_name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="client_reviewer_email">Client Reviewer Email</label>
+                    <input type="email" id="client_reviewer_email" name="client_reviewer_email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="mlr_reviewer_name">MLR Reviewer Name</label>
+                    <input type="text" id="mlr_reviewer_name" name="mlr_reviewer_name">
+                    <p class="help-text">Medical, Legal, Regulatory reviewer</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mlr_reviewer_email">MLR Reviewer Email</label>
+                    <input type="email" id="mlr_reviewer_email" name="mlr_reviewer_email">
+                </div>
+            </div>
+            
+            <button type="submit" class="btn-primary submit-btn">Submit SEO Content Request</button>
+        </form>
+    </div>
+    
+    <script>
+        // Dynamic form behavior
+        document.getElementById('therapeutic_area').addEventListener('change', function() {
+            const otherGroup = document.getElementById('therapeutic_area_other_group');
+            if (this.value === 'Other') {
+                otherGroup.style.display = 'block';
+                document.getElementById('therapeutic_area_other').required = true;
+            } else {
+                otherGroup.style.display = 'none';
+                document.getElementById('therapeutic_area_other').required = false;
+            }
+        });
+        
+        document.getElementById('brand_name_status').addEventListener('change', function() {
+            const brandNameGroup = document.getElementById('brand_name_group');
+            if (this.value === 'Finalized') {
+                brandNameGroup.style.display = 'block';
+            } else {
+                brandNameGroup.style.display = 'none';
+            }
+        });
+        
+        // Update product name based on stage
+        document.getElementById('stage').addEventListener('change', function() {
+            const productName = document.getElementById('product_name');
+            const currentName = productName.value;
+            
+            // Remove existing prefixes
+            const cleanName = currentName.replace(/^\[(Pre-Clinical|Phase I|Phase II|Phase III|Regulatory|Launch|Post-Market)\]\s*/, '');
+            
+            // Add new prefix based on stage
+            const prefixes = {
+                'Pre-Clinical': '[Pre-Clinical]',
+                'Phase I': '[Phase I]',
+                'Phase II': '[Phase II]',
+                'Phase III': '[Phase III]',
+                'Regulatory Review': '[Regulatory]',
+                'Market Launch': '[Launch]',
+                'Post-Market': '[Post-Market]'
+            };
+            
+            if (this.value && prefixes[this.value]) {
+                productName.value = prefixes[this.value] + ' ' + cleanName;
+            } else {
+                productName.value = cleanName;
+            }
+        });
+        
+        // Priority markets ranking
+        document.querySelectorAll('input[name="geography"]').forEach(checkbox => {
+            checkbox.addEventListener('change', updatePriorityMarkets);
+        });
+        
+        function updatePriorityMarkets() {
+            const selectedGeos = Array.from(document.querySelectorAll('input[name="geography"]:checked'))
+                .map(cb => cb.value);
+            
+            const priorityGroup = document.getElementById('priority_markets_group');
+            const priorityList = document.getElementById('priority_markets_list');
+            
+            if (selectedGeos.length >= 2) {
+                priorityGroup.style.display = 'block';
+                priorityList.innerHTML = selectedGeos.map((geo, index) => `
+                    <div class="form-group">
+                        <label for="priority_${geo}">${geo}</label>
+                        <select name="priority_markets[${geo}]" id="priority_${geo}">
+                            ${selectedGeos.map((_, i) => `<option value="${i + 1}">${i + 1}</option>`).join('')}
+                        </select>
+                    </div>
+                `).join('');
+                
+                // Set default values
+                selectedGeos.forEach((geo, index) => {
+                    document.getElementById(`priority_${geo}`).value = index + 1;
+                });
+            } else {
+                priorityGroup.style.display = 'none';
+            }
+        }
+        
+        // Dynamic list functions
+        function addCompetitor() {
+            const list = document.getElementById('competitors_list');
+            const newItem = document.createElement('div');
+            newItem.className = 'dynamic-list-item';
+            newItem.innerHTML = `
+                <input type="text" name="competitor_name[]" placeholder="Competitor product name">
+                <input type="url" name="competitor_url[]" placeholder="https://competitor-website.com">
+                <button type="button" onclick="removeItem(this)" class="remove-btn">Remove</button>
+            `;
+            list.appendChild(newItem);
+        }
+        
+        function addConference() {
+            const list = document.getElementById('conferences_list');
+            const newItem = document.createElement('div');
+            newItem.className = 'dynamic-list-item';
+            newItem.innerHTML = `
+                <input type="text" name="conference_name[]" placeholder="Conference name">
+                <input type="date" name="conference_date[]">
+                <input type="text" name="conference_topic[]" placeholder="Presentation topic">
+                <button type="button" onclick="removeItem(this)" class="remove-btn">Remove</button>
+            `;
+            list.appendChild(newItem);
+        }
+        
+        function addKOL() {
+            const list = document.getElementById('kols_list');
+            const newItem = document.createElement('div');
+            newItem.className = 'dynamic-list-item';
+            newItem.innerHTML = `
+                <input type="text" name="kol_name[]" placeholder="Name, Title">
+                <input type="text" name="kol_institution[]" placeholder="Institution">
+                <button type="button" onclick="removeItem(this)" class="remove-btn">Remove</button>
+            `;
+            list.appendChild(newItem);
+        }
+        
+        function removeItem(button) {
+            button.parentElement.remove();
+        }
+        
+        // Form validation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            let isValid = true;
+            
+            // Validate target audience
+            const targetAudience = document.querySelectorAll('input[name="target_audience"]:checked');
+            if (targetAudience.length === 0) {
+                document.getElementById('target_audience_error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('target_audience_error').style.display = 'none';
+            }
+            
+            // Validate geography
+            const geography = document.querySelectorAll('input[name="geography"]:checked');
+            if (geography.length === 0) {
+                document.getElementById('geography_error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('geography_error').style.display = 'none';
+            }
+            
+            // Validate treatment setting
+            const treatmentSetting = document.querySelectorAll('input[name="treatment_setting"]:checked');
+            if (treatmentSetting.length === 0) {
+                document.getElementById('treatment_setting_error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('treatment_setting_error').style.display = 'none';
+            }
+            
+            if (!isValid) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
